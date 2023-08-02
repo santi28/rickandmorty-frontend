@@ -48,7 +48,7 @@ export default function Home() {
         ))
       }
       <Grid item xs={12} sm={12} md={12} className='flex items-center justify-center'>
-        <Pagination count={info.pages} onChange={handlePagination} />
+        <Pagination count={info.pages} page={page} onChange={handlePagination} />
       </Grid>
     </Grid>
   )
