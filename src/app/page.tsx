@@ -1,7 +1,8 @@
 'use client'
 
+import CharacterCard from '@/components/CharacterCard'
 import { Character, getCharacters } from '@/services/characters.service'
-import { CircularProgress, Grid, Typography } from '@mui/material'
+import { CircularProgress, Grid, Pagination, Typography } from '@mui/material'
 import { use, useEffect, useState } from 'react'
 
 export default function Home() {
@@ -10,13 +11,14 @@ export default function Home() {
   const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(true)
 
+  const handlePagination = (event: React.ChangeEvent<unknown>, value: number) => { setPage(value) }
+
   useEffect(() => {
     setLoading(true)
-    getCharacters()
+    getCharacters(page)
       .then((characters) => {
         setCharacters(characters.results)
         setInfo(characters.info)
-        console.log(characters)
       })
       .finally(() => {
         setLoading(false)
@@ -37,6 +39,16 @@ export default function Home() {
       <Grid item xs={12} sm={8} md={12}>
         <Typography variant='h5' component='h1'>Personajes de Rick and Morty</Typography>
         <Typography variant='caption'>Se encontraron {info.count} personajes</Typography>
+      </Grid>
+      {
+        characters.map((character) => (
+          <Grid item key={character.id} xs={6} sm={4} md={3}>
+            <CharacterCard character={character} />
+          </Grid>
+        ))
+      }
+      <Grid item xs={12} sm={12} md={12} className='flex items-center justify-center'>
+        <Pagination count={info.pages} onChange={handlePagination} />
       </Grid>
     </Grid>
   )

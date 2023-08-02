@@ -1,7 +1,7 @@
 import { Character } from "@/services/characters.service";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
-export default function CharacterCart({ character }: { character: Character }) {
+export default function CharacterCard({ character }: { character: Character }) {
   return (
     <Card variant='outlined' className='h-full'>
       <CardMedia
