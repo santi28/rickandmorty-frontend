@@ -2,7 +2,7 @@
 
 ![Rick and Morty](https://wallpapercave.com/wp/wp6631294.jpg)
 
-Este proyecto es un frontend para mostrar una lista de los personajes humanos de la famosa serie Rick and Morty. Fue creado como parte de la postulación a Ciudadela y se basa en una API propia desarrollada con Express que consume datos de la API de Rick and Morty a través de GraphQL.
+Este proyecto es un frontend para mostrar una lista de los personajes humanos de la famosa serie Rick and Morty. Fue creado como parte de la postulación a Ciudadela y se basa en una [API](https://github.com/santi28/rickandmorty-backend) propia desarrollada con Express que consume datos de la API de Rick and Morty a través de GraphQL.
 
 ## Características del Proyecto
 
