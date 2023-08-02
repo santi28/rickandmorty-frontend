@@ -1,3 +1,4 @@
+import { AppBar, Toolbar, Typography } from '@mui/material'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -16,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AppBar position='sticky' elevation={0}>
+          <Toolbar>
+            <Typography variant='h6'>Personajes de Rick and Morty</Typography>
+          </Toolbar>
+        </AppBar>
+        {children}
+      </body>
     </html>
   )
 }

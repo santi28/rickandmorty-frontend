@@ -25,5 +25,5 @@ export interface CharacterResponse {
 export async function getCharacters(page: number = 1): Promise<CharacterResponse> {
   const response = await fetch(`${API_URL}/characters?page=${page}`);
   const data = await response.json();
-  return data;
+  return data.characters;
 }
